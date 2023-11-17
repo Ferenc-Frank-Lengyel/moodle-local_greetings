@@ -23,10 +23,10 @@
  */
 
 /**
- * Undocumented function
+ * Get a localised greeting message for a user
  *
- * @param [object] $user
- * @return void
+ * @param \stdClass $user
+ * @return string
  */
 function local_greetings_get_greeting($user) {
     if ($user == null) {
