@@ -49,7 +49,7 @@ function local_greetings_get_greeting($user) {
             break;
         case 'HU':
             $langstr = 'greetinguserhu';
-            break;                        
+            break;
         default:
             $langstr = 'greetingloggedinuser';
             break;
