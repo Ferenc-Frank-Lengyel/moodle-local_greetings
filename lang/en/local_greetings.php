@@ -37,3 +37,4 @@ $string['greetingusernz'] = 'Kia Ora, {$a}.';
 $string['greetinguserhu'] = 'Szia, {$a}.';
 
 $string['yourmessage'] = 'Your message:';
+$string['postedby'] = 'Posted by {$a}.';
