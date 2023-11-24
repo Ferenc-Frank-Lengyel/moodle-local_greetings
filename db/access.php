@@ -52,4 +52,12 @@ $capabilities = [
             'manager' => CAP_ALLOW,
         ],
     ],
+    'local/greetings:deleteownmessage' => [
+        'riskbitmask' => RISK_DATALOSS,
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_SYSTEM,
+        'archetypes' => [
+            'user' => CAP_ALLOW,
+        ],
+    ],
 ];
