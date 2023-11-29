@@ -116,10 +116,19 @@ if ($viewpost) {
             echo html_writer::start_tag('p', ['class' => 'card-footer text-center']);
             echo html_writer::link(
                 new moodle_url(
+                    '/local/greetings/edit.php',
+                    ['id' => $m->id]
+                ),
+                $OUTPUT->pix_icon('i/edit', get_string('edit')),
+                ['role' => 'button']
+            );
+            echo html_writer::link(
+                new moodle_url(
                     '/local/greetings/index.php',
                     ['action' => 'del', 'id' => $m->id, 'sesskey' => sesskey()]
                 ),
-                $OUTPUT->pix_icon('t/delete', '') . get_string('delete')
+                $OUTPUT->pix_icon('t/delete', get_string('delete')),
+                ['role' => 'button']
             );
             echo html_writer::end_tag('p');
         }

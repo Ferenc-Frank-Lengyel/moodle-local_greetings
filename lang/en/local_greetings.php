@@ -26,6 +26,9 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Greetings';
+$string['editmessage'] = 'Edit message';
+$string['norecordfound'] = 'No record found!';
+$string['cannoteditmessage'] = 'You cannot edit messages';
 
 $string['greetinguser'] = 'Greetings, user.';
 $string['greetingloggedinuser'] = 'Greetings, {$a}.';
