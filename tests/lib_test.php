@@ -64,7 +64,7 @@ class lib_test extends \advanced_testcase {
      *
      * @return array List of data sets - (string) data set name => (array) data
      */
-    public static function local_greetings_get_greeting_provider() {
+    public static function local_greetings_get_greeting_provider(): array {
         return [
             'No user' => [ // Not logged in.
                 'country' => null,
