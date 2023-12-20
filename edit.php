@@ -48,24 +48,32 @@ if (!$result = $DB->get_record('local_greetings_messages', ['id' => $id])) {
     throw new moodle_exception('norecordfound', 'local_greetings');
 }
 
-// Double-check the delelte capability.
+// Double-check the delete capability.
 $canedit = has_capability('local/greetings:deleteanymessage', $context) ||
     (has_capability('local/greetings:deleteownmessage', $context) && $result->userid == $USER->id);
 
 $messageform = new \local_greetings\form\message_form(null, ['message' => $result]);
 
-if ($canedit && $data = $messageform->get_data()) {
-    $message = required_param('message', PARAM_TEXT);
+if ($messageform->is_cancelled()) {
 
-    if (!empty($message)) {
-        // Only update the message. Leave other data untouched.
-        $result->message = $message;
+    redirect($PAGE->url); // Go to main greetings page.
 
-        $DB->update_record('local_greetings_messages', $result);
+} else {
+
+    if ($canedit && $data = $messageform->get_data()) {
+        $message = required_param('message', PARAM_TEXT);
+
+        if (!empty($message)) {
+            // Only update the message. Leave other data untouched.
+            $result->message = $message;
+
+            $DB->update_record('local_greetings_messages', $result);
+        }
 
         redirect($PAGE->url); // Go to main greetings page.
     }
 }
+
 
 echo $OUTPUT->header();
 

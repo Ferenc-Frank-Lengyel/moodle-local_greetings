@@ -45,10 +45,14 @@ class message_form extends \moodleform {
             $mform->setType('id', PARAM_INT); // Set type of element.
 
             $mform->setDefault('message', $message->message);
-        }
 
-        $submitlabel = get_string('submit');
-        $mform->addElement('submit', 'submitmessage', $submitlabel);
+            $this->add_action_buttons(true);
+
+        } else {
+
+            $this->add_action_buttons(false, get_string('submit'));
+
+        }
     }
 }
 
