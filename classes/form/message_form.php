@@ -24,7 +24,7 @@ require_once($CFG->libdir .'/formslib.php');
  * Class message_form
  *
  * @package    local_greetings
- * @copyright  2023 2023 Ferenc 'Frank' Fengyel ,ferenc.lengyel@glasgow.ac.uk>
+ * @copyright  2024 Ferenc 'Frank' Fengyel, ferenc.lengyel@glasgow.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class message_form extends \moodleform {
